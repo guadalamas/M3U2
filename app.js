@@ -8,8 +8,8 @@ var indexRouter = require('./routes/index'); // routers/index.js
 var usersRouter = require('./routes/users'); //routers/users.js
 
 /*manejador nuestro*/
-var productosRouter = require('./routes/productos'); //routers/productos.js
-var contactosRouter = require('./routes/contactos'); //routers/contactos.js
+var turismoRouter = require('./routes/turismo'); //routers/turismo.js
+var comentariosRouter = require('./routes/comentarios'); //routers/comentarios.js
 
 var app = express();
 
@@ -26,19 +26,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 /*donde uso este manejador*/
-app.use('/productos', productosRouter);
-app.use('/contactos', contactosRouter);
-
-app.get('/prueba', function(req,res) {
-  res.send('hola soy la pagina de prueba')
-})
+app.use('/turismo', turismoRouter);
+app.use('/comentarios', comentariosRouter);
 
 app.get('/nosotros', function(req,res) {
-  res.send('hola soy la pagina de Nosotros')
+  res.send('hola soy la pagina de nosotros')
 })
 
-app.get('/destacados', function(req,res) {
-  res.send('hola soy la pagina de Destacados')
+app.get('/servicios', function(req,res) {
+  res.send('hola soy la pagina de servicios')
+})
+
+app.get('/ubicacion', function(req,res) {
+  res.send('hola soy la pagina de ubicacion')
 })
 
 // catch 404 and forward to error handler
